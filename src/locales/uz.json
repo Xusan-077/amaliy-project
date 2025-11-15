@@ -1,0 +1,29 @@
+{
+  "header": {
+    "search": "Qidirish",
+    "home": "Assosiy",
+    "sorted": "saralangan"
+  },
+  "main": {
+    "titel": "So‘nggi yangiliklar"
+  },
+  "footer": {
+    "list": {
+      "item1": "Sayt haqida",
+      "item2": "Bizda",
+      "item3": "Aloqa",
+      "item4": "Arxiv"
+    },
+    "company": "QALAMPIR.UZ.",
+    "firstText": "Ushbu veb-sayt 2018-yil 26-oktabr kuni O‘zbekiston Respublikasi Prezident Administratsiyasi huzuridagi Axborot va ommaviy kommunikatsiyalar agentligida 1089-raqam bilan OAV sifatida ro‘yxatdan o‘tgan.",
+    "secontTitle": "Tashkilotchi: “QALAMPIR” MChJ.",
+    "secondText": "Tahririyat manzili: Toshkent shahri, Beruniy ko‘chasi, 88-uy.",
+    "thiredText": "Elektron manzil: info@qalampir.uz",
+    "bottomTitle": "© Copyright 2025 Qalampir – Haqiqat achchiq bo‘ladi."
+  },
+  "notFound": {
+    "title": "Kechirasiz... Ushbu sahifa topilmadi",
+    "text": "Bizni his qilishingiz uchun o‘rnimizda bo‘lishingiz kerak.",
+    "back": "Bosh sahifaga qaytish"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "header": {
+    "search": "Search",
+    "home": "Home",
+    "sorted": "Favorites"
+  },
+  "main": {
+    "titel": "Latest news"
+  },
+  "footer": {
+    "list": {
+      "item1": "About the site",
+      "item2": "About us",
+      "item3": "Contact",
+      "item4": "Archive"
+    },
+    "company": "QALAMPIR.UZ.",
+    "firstText": "This website was registered as a media outlet on October 26, 2018, at the Agency for Information and Mass Communications under the Administration of the President of the Republic of Uzbekistan with registration number 1089.",
+    "secontTitle": "Founder: QALAMPIR LLC.",
+    "secondText": "Editorial address: 88 Beruniy Street, Tashkent.",
+    "thiredText": "Email: info@qalampir.uz",
+    "bottomTitle": "© Copyright 2025 Qalampir – The truth can be bitter."
+  },
+  "notFound": {
+    "titleCode": "404",
+    "title": "Sorry... This page was not found",
+    "text": "To feel what we feel, you need to be in our place.",
+    "back": "Back to homepage"
+  }
+}

@@ -2,10 +2,11 @@
   "header": {
     "search": "Search",
     "home": "Home",
-    "sorted": "Favorites"
+    "sorted": "Sorted"
   },
   "main": {
-    "titel": "Latest news"
+    "titel": "Latest news",
+    "secontTitle": "Trending"
   },
   "footer": {
     "list": {
@@ -15,16 +16,15 @@
       "item4": "Archive"
     },
     "company": "QALAMPIR.UZ.",
-    "firstText": "This website was registered as a media outlet on October 26, 2018, at the Agency for Information and Mass Communications under the Administration of the President of the Republic of Uzbekistan with registration number 1089.",
-    "secontTitle": "Founder: QALAMPIR LLC.",
-    "secondText": "Editorial address: 88 Beruniy Street, Tashkent.",
+    "firstText": "This website was registered as a media outlet on October 26, 2018, under number 1089 at the Agency of Information and Mass Communications under the Administration of the President of the Republic of Uzbekistan.",
+    "secontTitle": "Organizer: “QALAMPIR” LLC.",
+    "secondText": "Editorial address: Tashkent city, Beruniy street, 88.",
     "thiredText": "Email: info@qalampir.uz",
-    "bottomTitle": "© Copyright 2025 Qalampir – The truth can be bitter."
+    "bottomTitle": "© Copyright 2025 Qalampir – The truth is bitter."
   },
   "notFound": {
-    "titleCode": "404",
     "title": "Sorry... This page was not found",
-    "text": "To feel what we feel, you need to be in our place.",
-    "back": "Back to homepage"
+    "text": "You have to be in our place to feel what we feel.",
+    "back": "Return to Home"
   }
 }

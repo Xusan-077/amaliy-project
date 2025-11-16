@@ -19,9 +19,9 @@ export default function NewsItem({}) {
           </div>
         </div>
         <h2 className="item__title">
-          <a className="item__text" href={item.url}>
+          <h3 className="item__text" href={item.url}>
             {title}
-          </a>
+          </h3>
         </h2>
       </div>
     </li>

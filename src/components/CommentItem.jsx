@@ -2,7 +2,14 @@ import { useNavigate } from "react-router-dom";
 
 import useAppContext from "../hooks/useAppContext";
 
-export default function CommentItem({ title, id, source, item }) {
+export default function CommentItem({
+  title,
+  thin,
+  id,
+  source,
+  urlToImage,
+  item,
+}) {
   const { like, setLike, setNewData } = useAppContext();
 
   const navigate = useNavigate();
@@ -19,14 +26,25 @@ export default function CommentItem({ title, id, source, item }) {
 
   function handleMove() {
     setNewData(item);
-    navigate(`/news/${id}`);
+    navigate(`/news/${title}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  console.log("like", like);
-
   return (
-    <li className="home__item">
-      <div className="item__img-div" onClick={handleMove}></div>
+    <li className={`${thin ? "home__item--active" : "home__item"} `}>
+      {urlToImage ? (
+        <img
+          onClick={handleMove}
+          src={urlToImage}
+          alt=""
+          className={`${thin ? "item__img--active" : "item__img"} `}
+        />
+      ) : (
+        <div
+          className={`${thin ? "item__img-div--active" : "item__img-div"} `}
+          onClick={handleMove}
+        ></div>
+      )}
       <div className="item__content">
         <div className="item__bottom">
           <span className="item__source-name">{source?.name}</span>
@@ -40,11 +58,12 @@ export default function CommentItem({ title, id, source, item }) {
             ></i>
           </div>
         </div>
-        <h2 className="item__title">
-          <a className="item__text" href={item.url}>
-            {title}
-          </a>
-        </h2>
+        <h1
+          className={`${thin ? "item__text--active" : "item__text"} `}
+          href={item.url}
+        >
+          {title}
+        </h1>
       </div>
     </li>
   );

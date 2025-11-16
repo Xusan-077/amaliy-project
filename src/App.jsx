@@ -8,7 +8,11 @@ import NotFound from "./pages/NotFound";
 import DetailPage from "./pages/DetailPage";
 
 export default function App() {
-  const [newData, setNewData] = useState();
+  const [newData, setNewData] = useState(
+    localStorage.getItem("newData")
+      ? JSON.parse(localStorage.getItem("newData"))
+      : {}
+  );
 
   const [like, setLike] = useState(
     localStorage.getItem("like") ? JSON.parse(localStorage.getItem("like")) : []
@@ -17,6 +21,10 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem("like", JSON.stringify(like));
   }, [like]);
+
+  useEffect(() => {
+    localStorage.setItem("newData", JSON.stringify(newData));
+  }, [newData]);
 
   return (
     <Context.Provider value={{ like, setLike, newData, setNewData }}>

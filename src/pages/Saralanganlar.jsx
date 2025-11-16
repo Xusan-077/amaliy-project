@@ -2,6 +2,8 @@ import { useTranslation } from "react-i18next";
 import CommentItem from "../components/CommentItem";
 import useAppContext from "../hooks/useAppContext";
 
+import Logo from "../assets/images/Logo.svg";
+
 export default function Saralangan() {
   const { like } = useAppContext();
 
@@ -22,7 +24,10 @@ export default function Saralangan() {
               </ul>
             </>
           ) : (
-            <p className="saralangan__bosh">{t("header.sorted")} yo`q</p>
+            <div className="empty">
+              <img src={Logo} alt="" />
+              <p className="saralangan__bosh">{t("header.sorted")} yo`q</p>
+            </div>
           )}
         </div>
       </div>

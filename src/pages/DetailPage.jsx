@@ -5,11 +5,19 @@ import CommentItem from "../components/CommentItem";
 
 export default function DetailPage({}) {
   const [news, setNews] = useState([]);
-  const { newData } = useAppContext();
+  const { newData, like, setLike } = useAppContext();
 
-  console.log("newData", newData);
+  const [show, setShow] = useState(false);
 
-  function handleAddtoLike() {}
+  function handleAddtoLike() {
+    const inLike = like.find((el) => el.title == newData.title);
+
+    if (inLike) {
+      setLike(like.filter((el) => el.title != newData.title));
+    } else {
+      setLike([...like, newData]);
+    }
+  }
 
   async function get() {
     const res =
@@ -23,8 +31,6 @@ export default function DetailPage({}) {
     get();
   }, []);
 
-  console.log(news);
-
   return (
     <section className="detail">
       <div className="container">
@@ -34,26 +40,64 @@ export default function DetailPage({}) {
             <div className="detail__top">
               <span className="detail__source">{newData.source.name}</span>
               <div className="detail__like" onClick={handleAddtoLike}>
-                {/* <i
+                <i
                   className={`bi ${
-                    like.find((el) => el.id === newData.id)
+                    like.find((el) => el.title === newData.title)
                       ? "bi-heart-fill active"
                       : "bi-heart"
                   } text-[18px]`}
-                ></i> */}
+                ></i>
               </div>
             </div>
 
-            <div className="detail__img"></div>
+            <div className="detail__img">
+              <img src={newData.urlToImage} alt="" className="detai__img" />
+            </div>
 
             <p className="detail__description">{newData.description}</p>
+            <p className="detail__description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+              aliquam minima ab provident, in corrupti ea adipisci modi
+              excepturi iste tempore architecto, quae quas officia libero.
+              Eveniet sint pariatur corrupti omnis asperiores. Nesciunt corrupti
+              aliquid minima sapiente ad quisquam error quo, in, earum deserunt
+              sint exercitationem saepe cum recusandae architecto voluptatem
+              quos temporibus aliquam voluptatum? Eos, recusandae, dolore quasi,
+              accusantium ut tempora ipsa officiis pariatur accusamus nihil ea
+              officia soluta sunt quaerat quibusdam praesentium aut laborum
+              possimus nulla magni atque corporis quas ratione! Nam cumque
+              aliquid, provident, aliquam placeat suscipit alias molestias
+              saepe, corporis numquam exercitationem vero expedita impedit
+              assumenda!
+            </p>
+            <p className="detail__description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+              aliquam minima ab provident, in corrupti ea adipisci modi
+              excepturi iste tempore architecto, quae quas officia libero.
+              Eveniet sint pariatur corrupti omnis asperiores. Nesciunt corrupti
+              aliquid minima sapiente ad quisquam error quo, in, earum deserunt
+              sint exercitationem saepe cum recusandae architecto voluptatem
+              quos temporibus aliquam voluptatum? Eos, recusandae, dolore quasi,
+              accusantium ut tempora ipsa officiis pariatur accusamus nihil ea
+              officia soluta sunt quaerat quibusdam praesentium aut laborum
+              possimus nulla magni atque corporis quas ratione! Nam cumque
+              aliquid, provident, aliquam placeat suscipit alias molestias
+              saepe, corporis numquam exercitationem vero expedita impedit
+              assumenda!
+            </p>
           </div>
           <div className="detail__left">
-            <ul className="detail__list">
+            <ul
+              className={`${show ? "detail__list--active" : "detail__list"} `}
+            >
               {news.map((el, index) => (
                 <CommentItem item={el} key={index} {...el} />
               ))}
             </ul>
+
+            <button onClick={() => setShow(true)} className="show-more">
+              Show All
+            </button>
           </div>
         </div>
       </div>

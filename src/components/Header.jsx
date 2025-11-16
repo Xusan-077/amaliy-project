@@ -3,11 +3,14 @@ import Logo from "../assets/images/Logo.svg";
 
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import useAppContext from "../hooks/useAppContext";
 
 export default function Header() {
   const { t, i18n } = useTranslation();
 
   const [isSearch, setIsSearch] = useState(false);
+
+  const { setLang, lang } = useAppContext();
 
   return (
     <header className="header">
@@ -63,7 +66,9 @@ export default function Header() {
               </ul>
             </div>
             <select
-              onChange={(evt) => i18n.changeLanguage(evt.target.value)}
+              onChange={(evt) => {
+                i18n.changeLanguage(evt.target.value);
+              }}
               className="header__language-select"
             >
               <option value="uz">uz</option>

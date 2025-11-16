@@ -7,6 +7,8 @@ import OtherNews from "../components/OtherNews";
 export default function Home() {
   const { t } = useTranslation();
 
+  const API = "0544d8792bc24feb86f976b4a59e07a2";
+
   const [news, setNews] = useState([]);
   const [newNews, setNewNews] = useState([]);
   const [apple, setApple] = useState([]);
@@ -21,7 +23,7 @@ export default function Home() {
     try {
       setIsLoading(true);
       const res =
-        await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=6bca5b2d6e8b4eb8b7a4d9fc7332a61c
+        await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${API}
   `);
 
       setIsLoading(false);
@@ -38,7 +40,7 @@ export default function Home() {
     try {
       setIsLoading(true);
       const res =
-        await axios.get(`https://newsapi.org/v2/everything?domains=wsj.com&apiKey=6bca5b2d6e8b4eb8b7a4d9fc7332a61c
+        await axios.get(`https://newsapi.org/v2/everything?domains=wsj.com&apiKey=${API}
   `);
 
       setIsLoading(false);
@@ -55,7 +57,7 @@ export default function Home() {
     try {
       setIsLoading(true);
       const res =
-        await axios.get(`https://newsapi.org/v2/everything?q=apple&from=2025-11-15&to=2025-11-15&sortBy=popularity&apiKey=6bca5b2d6e8b4eb8b7a4d9fc7332a61c
+        await axios.get(`https://newsapi.org/v2/everything?q=apple&from=2025-11-15&to=2025-11-15&sortBy=popularity&apiKey=${API}
 
   `);
 
@@ -73,8 +75,7 @@ export default function Home() {
     try {
       setIsLoading(true);
       const res = await axios.get(`
-https://newsapi.org/v2/everything?q=tesla&from=2025-10-16&sortBy=publishedAt&apiKey=6bca5b2d6e8b4eb8b7a4d9fc7332a61c
-
+https://newsapi.org/v2/everything?q=tesla&from=2025-10-16&sortBy=publishedAt&apiKey=${API}
   `);
 
       setIsLoading(false);

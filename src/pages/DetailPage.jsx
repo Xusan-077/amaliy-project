@@ -14,6 +14,8 @@ export default function DetailPage({}) {
 
   const [modal, setModal] = useState(false);
 
+  const API = "0544d8792bc24feb86f976b4a59e07a2";
+
   function handleAddtoLike() {
     const inLike = like.find((el) => el.title == newData.title);
 
@@ -28,7 +30,7 @@ export default function DetailPage({}) {
     try {
       setIsLoading(true);
       const res =
-        await axios.get(`https://newsapi.org/v2/everything?domains=wsj.com&apiKey=6bca5b2d6e8b4eb8b7a4d9fc7332a61c
+        await axios.get(`https://newsapi.org/v2/everything?domains=wsj.com&apiKey=${API}
         `);
 
       setNews(res.data.articles);
